@@ -32,7 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', async (req, res) => {
     try {
         // Hacemos la solicitud a la API de eventos
-        const response = await axios.get('https://localhost:7275/api/eventos', { httpsAgent });
+        const response = await axios.get('http://christianbm-001-site1.atempurl.com/api/eventos', { httpsAgent });
         const eventos = response.data; // Obtenemos los eventos de la respuesta
         res.render('index', { eventos }); // Pasamos los eventos a la vista EJS
     } catch (error) {
@@ -51,7 +51,7 @@ app.put('/editar/:id', async (req, res) => {
 
     try {
         // Realiza la solicitud PUT a la API de .NET Core para actualizar el evento
-        const response = await axios.put(`https://localhost:7275/api/eventos/${eventoID}`, {
+        const response = await axios.put(`http://christianbm-001-site1.atempurl.com/api/eventos/${eventoID}`, {
             eventoID: eventoID,
             nombre: nombre,
             fecha: fecha,
@@ -84,7 +84,7 @@ app.post('/crear', async (req, res) => {
     };
 
     try {
-        await axios.post('https://localhost:7275/api/eventos', nuevoEvento, { httpsAgent });
+        await axios.post('http://christianbm-001-site1.atempurl.com/api/eventos', nuevoEvento, { httpsAgent });
         res.redirect('/');  // Redirige a la página principal después de crear el evento
     } catch (error) {
         console.error('Error al crear el evento:', error.message);
@@ -97,7 +97,7 @@ app.delete('/eliminar/:id', async (req, res) => {
     console.log(`Recibida solicitud DELETE para eliminar el evento con ID: ${eventoID}`);
 
     try {
-        const response = await axios.delete(`https://localhost:7275/api/Eventos/${eventoID}`, { httpsAgent });
+        const response = await axios.delete(`http://christianbm-001-site1.atempurl.com/api/Eventos/${eventoID}`, { httpsAgent });
         console.log('Respuesta de la API:', response.status);  // Para ver la respuesta
         if (response.status === 200) {
             console.log(`Evento con ID ${eventoID} eliminado correctamente a`);

@@ -1,0 +1,204 @@
+/* General styles for body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/imagen/imagen5.jpg') no-repeat center center fixed; /* Imagen de fondo */
+    background-size: cover;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(148, 148, 149, 0.864); /* Fondo blanco con 50% de transparencia */
+    z-index: -1; /* Asegúrate de que quede detrás del contenido */
+    pointer-events: none; /* Permite interactuar con el contenido encima */
+}
+
+/* Título grande */
+h1 {
+    font-size: 2.5em;
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Container para toda la página */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centrar la página */
+    padding: 20px;
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    background-color: rgba(123, 114, 114, 0.9); /* Fondo blanco con transparencia */
+    border-bottom: 2px solid #ddd;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    color: #333;
+    padding: 10px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler-icon {
+    color: #333;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: none;
+    content: "\2630"; /* Ícono de hamburguesa */
+    font-size: 1.5rem;
+}
+
+/* Estilos para el formulario con opacidad */
+#formulario-evento {
+    opacity: 0.9; /* Le da una opacidad del 90% */
+    background-color: #060606;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(1, 1, 1, 0.1);
+    width: 80%;
+    margin: 20px auto;
+}
+
+
+#formulario-evento h2 {
+    font-size: 24px;
+    color: #080808; /* Cambia el color de las letras a blanco para mejorar la legibilidad */
+    margin-bottom: 15px;
+    background-color: rgba(0, 0, 0, 0); /* Fondo semitransparente en el texto */
+    padding: 5px;
+    border-radius: 5px; /* Opcional, para redondear el fondo del texto */
+}
+
+
+#formulario-evento input, 
+#formulario-evento select, 
+#formulario-evento textarea {
+    width: 100%; /* Hace que los campos llenen el ancho del formulario */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #150808;
+    border-radius: 5px;
+}
+
+#formulario-evento button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.8s;
+}
+
+#formulario-evento button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para la tabla de listar eventos */
+#tabla-eventos {
+    width: 80%; /* Ancho igual al del formulario */
+    margin: 20px auto; /* Centra la tabla */
+    border-collapse: collapse;
+    background-color: rgba(93, 86, 86, 0.5); /* Fondo blanco con 50% de transparencia */
+}
+
+/* Asegurar que todo el texto dentro de la tabla sea negro */
+#tabla-eventos th, #tabla-eventos td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #100d0d;
+    color: #000; /* Color de texto completamente negro */
+}
+
+/* Asegurar que el fondo de los encabezados de la tabla no sea transparente */
+#tabla-eventos th {
+    background-color: #1b1919;
+    color: #0e0d0d; /* Mantener el texto blanco en los encabezados */
+}
+
+/* Filas pares con fondo gris claro */
+#tabla-eventos tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo con transparencia del 50% para las filas pares */
+}
+
+
+/* Estilo para alinear y centrar el contenido de la página */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos del carrusel */
+.carousel {
+    width: 95%; /* El carrusel ocupará el 95% del ancho de la página */
+    max-width: 1200px; /* Añade un límite máximo si lo deseas */
+    margin: 20px auto; /* Centra el carrusel horizontalmente */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade un poco de sombra */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-inner img {
+    width: 100%; /* Las imágenes ocuparán todo el ancho disponible */
+    height: 500px; /* Ajusta la altura como prefieras */
+    object-fit: cover; /* Esto hace que la imagen se recorte de manera uniforme y mantenga proporciones */
+    border-radius: 10px; /* Redondea las esquinas para que coincida con el contenedor */
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #formulario-evento, #tabla-eventos, #carrusel {
+        width: 95%; /* Ajusta el ancho en pantallas más pequeñas */
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+

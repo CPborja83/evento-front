@@ -23,7 +23,7 @@ function eliminarEvento(eventoID) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const tipoEventoSelect = document.getElementById('tipoEventoID');
-    const url = 'https://localhost:7275/api/Tipos';
+    const url = 'http://christianbm-001-site1.atempurl.com/api/Tipos';
 
     // Obtener tipos de evento
     fetch(url)
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             try {
-                const response = await fetch('https://localhost:7275/api/Eventos', {
+                const response = await fetch('http://christianbm-001-site1.atempurl.com/api/Eventos', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             try {
-                const response = await fetch(`https://localhost:7275/api/Eventos/${formData.get('eventoID')}`, {
+                const response = await fetch(`http://christianbm-001-site1.atempurl.com/${formData.get('eventoID')}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),

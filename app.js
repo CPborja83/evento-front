@@ -16,10 +16,10 @@ app.use(cors()); // Permite solicitudes desde otros dominios
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // Usar path.join para manejar rutas
 
-// Ruta para renderizar la página de creación
-app.get('/crear', (req, res) => {
-    res.render('crear');  // Asegúrate de que el archivo 'crear.ejs' exista en la carpeta 'views'
-});
+// Ruta para la página principal
+app.get('/', (req, res) => {
+    res.render('index');  // Renderiza index.ejs
+  });
 
 // Servir archivos estáticos (CSS, JS)
 app.use(express.static(path.join(__dirname, 'public')));

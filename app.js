@@ -10,7 +10,8 @@ const port = 3000;
 const cors = require('cors');
 app.use(cors()); // Permite solicitudes desde otros dominios
 
-
+// Configurar Express para servir archivos estáticos de la carpeta 'imagen'
+app.use('/imagen', express.static(path.join(__dirname, 'imagen')));
 
 // Configurar EJS como motor de plantillas
 app.set('view engine', 'ejs');

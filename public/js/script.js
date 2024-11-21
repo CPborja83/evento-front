@@ -97,7 +97,11 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             try {
+<<<<<<< HEAD
                 const response = await fetch(`http://christianbm-001-site1.atempurl.com/${formData.get('eventoID')}`, {
+=======
+                const response = await fetch(`http://christianbm-001-site1.atempurl.com/api/Eventos/${formData.get('eventoID')}`, {
+>>>>>>> 3f6547f (Initial commit)
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),

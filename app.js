@@ -6,7 +6,7 @@ const https = require('https'); // Necesario para solicitudes HTTPS
 const httpsAgent = require('https').Agent({ rejectUnauthorized: false });
 
 const app = express();
-const port = 5500;
+const port = 3000;
 const cors = require('cors');
 app.use(cors()); // Permite solicitudes desde otros dominios
 
